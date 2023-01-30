@@ -1,0 +1,27 @@
+
+
+
+require('moment-duration-format')
+const set = require("../../settings")
+
+const { joinVoiceChannel } = require("@discordjs/voice");
+module.exports = async client => {
+    setInterval(async () => {
+    const bio = set.bio
+    const random = Math.floor(Math.random() * (bio.length))
+    client.user.setActivity({name: bio[random]})
+    const VoiceChannel = client.channels.cache.get(set.ses);
+    joinVoiceChannel({
+      channelId: VoiceChannel.id,
+      guildId: VoiceChannel.guild.id,
+      adapterCreator: VoiceChannel.guild.voiceAdapterCreator,
+      selfDeaf: true,// 
+      selfMute: true // 
+    });
+    }, 10000)
+   
+}
+
+
+
+    
