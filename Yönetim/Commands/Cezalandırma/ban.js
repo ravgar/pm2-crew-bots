@@ -4,7 +4,7 @@ const bandata = require("../../Schema/ban")
 module.exports = {
     name: "ban",
     about: "(ktria)",
-    aliases: ["banned","fuckyou","uza","sikimkadarboyutürlütürlühuyuorospuçocuğuemrebelezoğlu"],
+    aliases: ["banned","fuckyou","uza","manitanasöylebizitanır"],
     run: async (client, message, args, embed) => {
         let db = await data.findOne({guild:message.guild.id})
         if(!db.banhammer.some(ktria => message.member.roles.cache.has(ktria)) && !message.member.permissions.has("BAN_MEMBERS") && !message.member.permissions.has("ADMINISTRATOR")) return;       
